@@ -1,0 +1,23 @@
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+# 数据路径
+path: ""  # dataset root dir
+
+# 注意数据路径分隔符使用【/】,不是【\】
+# 项目不要出现含有中文字符的目录文件或路径，否则会出现很多异常！
+train:
+  - '/home/nasdata/dataset/tmp/fall/Fall-Down-Det-v1/train/train.txt'
+  - '/home/nasdata/dataset/tmp/fall/Fall-Down-Det-v2/train.txt'
+
+val:
+  - '/home/nasdata/dataset/tmp/fall/Fall-Down-Det-v1/test/test.txt'
+
+test:  # test images (optional)
+data_type: voc
+
+# 1.设置类别个数，和要训练的类别名称，ID号从0开始递增
+nc: 3  # number of classes
+names: { 'up': 0, 'bending': 1, 'down': 2 }
+
+# 2.如果你想合并所有类别为一个大类，进行训练： unique表示合并所有类为单独一个类别
+#nc: 1  # number of classes
+#names: { "unique": 0 }
